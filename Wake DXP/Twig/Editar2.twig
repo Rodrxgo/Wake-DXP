@@ -1,0 +1,736 @@
+{% set totalProducts=products|length %}{% set totalRecommendations=recommendations|length %}
+{% if totalProducts > 0 %}
+	<!-- 1/LINHA -->
+	<table width="600" border="0" cellpadding="0" cellspacing="0" align="center">
+		<tr>
+			<td height="20"></td>
+		</tr>
+		<tr>
+			<td align="center">
+				<table width="600" border="0" cellpadding="0" cellspacing="0" align="center">
+					<tr>
+						<td align="center">
+							<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="#F7F7F7" style="border-radius: 25px; padding: 10px;">
+								<tr>
+									<!-- IMG -->
+									<td align="center" width="260">
+										<a href="{{products[0]['productLink']}}" style="text-decoration: none; color:#000000;" target="_blank">
+											<img border="0" src="{{products[0]['image']}}" width="260" alt="" style="display: block; border-radius: 25px;">
+										</a>
+									</td>
+									<!-- END IMG -->
+									<td align="left" style="padding-left: 50px;">
+										<table width="260" border="0" cellspacing="0" cellpadding="0" align="left" style="text-decoration: none; font-family: sans-serif;color: #555555; font-size: 14px;">
+											<tr>
+												<td height="15"></td>
+											</tr>
+											<!-- NOME PRODUTO -->
+											<tr>
+												<td align="left">
+													<a href="{{products[0]['productLink']}}" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif;color: #000000; font-size: 14px; font-weight: bold;" target="_blank">
+														{{products[0]['productName']}}
+													</a>
+												</td>
+											</tr>
+											<!-- END NOME PRODUTO -->
+											<tr>
+												<td height="15"></td>
+											</tr>
+											{% if products[0]['priceByNum'] < products[0]['priceNum'] %}
+												<tr>
+													<!-- PRECO DE -->
+													<td align="left">
+														<span style="color: #666666;">De
+															<s>{{products[0]['price']}}</s>
+														</span>
+
+													</td>
+													<!-- END PRECO DE -->
+												</tr>
+											{% endif %}
+											<tr>
+												<!-- PRECO POR -->
+												<td align="left">
+													<span style="color: #BF5545; font-family: Arial, Helvetica, Arial, Helvetica, sans-serif;">Por
+														{{products[0]['priceBy']}}</span>
+												</td>
+												<!-- END PRECO POR -->
+											</tr>
+											<tr>
+												<td height="15"></td>
+											</tr>
+											<tr>
+												<!-- CTA -->
+												<td align="left">
+													<table cellpadding="0" cellspacing="0" align="left">
+														<tr>
+															<td align="left" style="padding: 10px; width: 150px; height: 30px; border: 0px;padding: 5px; background-color: #000;border-radius: 5px; font-family: Arial Nova, Arial, Helvetica, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter;">
+																<a target="_blank" href="{{products[0]['productLink']}}" style="text-decoration: none; color: #ffffff;">
+																	COMPRAR
+																</a>
+															</td>
+														</tr>
+													</table>
+												</td>
+												<!-- END CTA -->
+											</tr>
+											<tr>
+												<td height="15"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	{% if totalProducts in [4,7,10] %}
+		{% set totalList=(totalProducts - 1) / 3 %}{% set c=1 %}
+		{% for i in 1..totalList %}
+			<table>
+				<tr>
+					<td height="20"></td>
+				</tr>
+			</table>
+			<!-- 3/LINHA -->
+			<table cellpadding="0" cellspacing="0" width="600" align="center">
+				<tr>
+					<td align="center">
+						<table
+							width="190" border="0" cellpadding="0" cellspacing="0" align="center" height="420" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif;color: #000000; font-size: 15px; border-radius: 20px; padding: 2px;" bgcolor="#F7F7F7">
+							<!-- IMG -->
+							<tr>
+								<td width="180" align="center" valign="top">
+									<a href="{{products[c]['productLink']}}" style="text-decoration: none; color:#000000;" target="_blank">
+										<img border="0" src="{{products[c]['image']}}" width="170" alt="" style="display: block; border-radius: 25px;">
+									</a>
+								</td>
+							</tr>
+							<!-- END IMG -->
+							<tr>
+								<td height="15"></td>
+							</tr>
+							<!-- NOME PRODUTO -->
+							<tr>
+								<td width="170" align="center" valign="top">
+									<b>{{products[c]['productName']}}</b>
+								</td>
+							</tr>
+							<!-- END NOME PRODUTO -->
+							<tr>
+								<td height="15"></td>
+							</tr>
+							<tr>
+								<td width="170" align="center">
+									{% if products[c]['priceByNum'] < products[c]['priceNum'] %}
+										<!-- PREÇO DE -->
+										<span style="color: #666666;">De
+											<s>{{products[c]['price']}}</s>
+										</span>
+
+										<!-- END PREÇO DE -->
+										<br>
+									{% endif %}
+									<!-- PREÇO POR -->
+									<span style="color: #BF5545;">Por
+										{{products[c]['priceBy']}}
+										<br></span>
+									<!-- END PREÇO POR -->
+								</td>
+							</tr>
+							<tr>
+								<!-- CTA -->
+								<td width="180" height="60" align="center">
+									<table cellpadding="0" cellspacing="0" align="center">
+										<tr>
+											<td align="center" style="padding: 10px; width: 120px; height: 30px; border: 0px;padding: 5px; background-color: #000;border-radius: 5px; font-family: Arial Nova, Arial, Helvetica, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter;">
+												<a target="_blank" href="{{products[c]['productLink']}}" style="text-decoration: none;color: #ffffff;">
+													COMPRAR
+												</a>
+											</td>
+										</tr>
+									</table>
+								</td>
+								<!-- END CTA -->
+							</tr>
+						</table>
+
+					</td>
+					<td align="center">
+						<table
+							width="190" border="0" cellpadding="0" cellspacing="0" align="center" height="420" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif;color: #000000; font-size: 15px; border-radius: 20px; padding: 2px;" bgcolor="#F7F7F7">
+							<!-- IMG -->
+							<tr>
+								<td width="180" align="center" valign="top">
+									<a href="{{products[(c + 1)]['productLink']}}" style="text-decoration: none; color:#000000;" target="_blank">
+										<img border="0" src="{{products[(c + 1)]['image']}}" width="170" alt="" style="display: block; border-radius: 25px;">
+									</a>
+								</td>
+							</tr>
+							<!-- END IMG -->
+							<tr>
+								<td height="15"></td>
+							</tr>
+							<!-- NOME PRODUTO -->
+							<tr>
+								<td width="170" align="center" valign="top">
+									<b>{{products[(c + 1)]['productName']}}</b>
+								</td>
+							</tr>
+							<!-- END NOME PRODUTO -->
+							<tr>
+								<td height="15"></td>
+							</tr>
+							<tr>
+								<td width="170" align="center">
+									{% if products[(c + 1)]['priceByNum'] < products[(c + 1)]['priceNum'] %}
+										<!-- PREÇO DE -->
+										<span style="color: #666666;">
+											De
+											<s>{{products[(c + 1)]['price']}}</s>
+										</span>
+										<!-- END PREÇO DE -->
+										<br>
+									{% endif %}
+									<!-- PREÇO POR -->
+									<span style="color: #BF5545;">Por
+										{{products[(c + 1)]['priceBy']}}
+										<br></span>
+									<!-- END PREÇO POR -->
+								</td>
+							</tr>
+							<tr>
+								<td width="180" height="60" align="center">
+									<table cellpadding="0" cellspacing="0" align="center">
+										<tr>
+											<!-- CTA -->
+											<td align="center" style="padding: 10px; width: 120px; height: 30px; border: 0px;padding: 5px; background-color: #000;border-radius: 5px; font-family: Arial Nova, Arial, Helvetica, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter;">
+												<a target="_blank" href="{{products[(c + 1)]['productLink']}}" style="text-decoration: none;color: #ffffff;">
+													COMPRAR
+												</a>
+											</td>
+											<!-- END CTA -->
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td align="center">
+						<table
+							width="190" border="0" cellpadding="0" cellspacing="0" align="center" height="420" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif;color: #000000; font-size: 14px; border-radius: 20px; padding: 2px;" bgcolor="#F7F7F7">
+							<!-- IMG -->
+							<tr>
+								<td width="180" align="center" valign="top">
+									<a href="{{products[(c + 2)]['productLink']}}" style="text-decoration: none; color:#000000;" target="_blank">
+										<img border="0" src="{{products[(c + 2)]['image']}}" width="170" alt="" style="display: block; border-radius: 25px;">
+									</a>
+								</td>
+							</tr>
+							<!-- END IMG -->
+							<tr>
+								<td height="15"></td>
+							</tr>
+							<!-- NOME PRODUTO -->
+							<tr>
+								<td width="170" align="center" valign="top">
+									<b>{{products[(c + 2)]['productName']}}</b>
+								</td>
+							</tr>
+							<!-- END NOME PRODUTO -->
+							<tr>
+								<td height="15"></td>
+							</tr>
+							<tr>
+								<td width="170" align="center">
+									{% if products[(c + 2)]['priceByNum'] < products[(c + 2)]['priceNum'] %}
+										<!-- PREÇO DE -->
+										<span style="color: #666666;">
+											De
+											<s>{{products[(c + 2)]['price']}}</s>
+										</span>
+										<!-- END PREÇO DE -->
+										<br>
+									{% endif %}
+									<!-- PREÇO POR -->
+									<span style="color: #BF5545;">Por
+										{{products[(c + 2)]['priceBy']}}
+										<br></span>
+									<!-- END PREÇO POR -->
+								</td>
+							</tr>
+							<tr>
+								<td width="180" height="60" align="center">
+									<table cellpadding="0" cellspacing="0" align="center">
+										<tr>
+											<!-- CTA -->
+											<td align="center" style="padding: 10px; width: 120px; height: 30px; border: 0px;padding: 5px; background-color: #000;border-radius: 5px; font-family: Arial Nova, Arial, Helvetica, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter;">
+												<a target="_blank" href="{{products[(c + 2)]['productLink']}}" style="text-decoration: none;color: #ffffff;">
+													COMPRAR
+												</a>
+											</td>
+											<!-- END CTA -->
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			{% set c=c + 3 %}
+		{% endfor %}
+	{% elseif totalProducts in [3,5] %}
+		{% set totalList=(totalProducts - 1) / 2 %}{% set c=1 %}
+		{% for i in 1..totalList %}
+			<table>
+				<tr>
+					<td height="20"></td>
+				</tr>
+			</table>
+			<!-- 2/LINHA -->
+			<table cellpadding="0" cellspacing="0" width="600" align="center" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif;color: #000000; font-size: 14px;">
+				<tr>
+					<td align="center">
+						<table width="290" cellpadding="0" cellspacing="0" align="center" bgcolor="#F7F7F7" height="475" style="border-radius: 20px; padding: 3px;">
+							<tr>
+								<!-- IMG -->
+								<td width="275" align="center" valign="top">
+									<a href="{{products[c]['productLink']}}" style="text-decoration: none; color:#000000;" target="_blank">
+										<img border="0" src="{{products[c]['image']}}" width="260" alt="" style="display: block; border-radius: 25px;">
+									</a>
+								</td>
+								<!-- END IMG -->
+							</tr>
+							<tr>
+								<td height="15"></td>
+							</tr>
+							<tr>
+								<!-- NOME PRODUTO -->
+								<td width="275" align="center" valign="top">
+									<b>{{products[c]['productName']}}</b>
+								</td>
+								<!-- END NOME PRODUTO -->
+							</tr>
+							<tr>
+								<td height="15"></td>
+							</tr>
+							<tr>
+								<td width="275" align="center">
+									{% if products[c]['priceByNum'] < products[c]['priceNum'] %}
+										<!-- PREÇO DE -->
+										<span style="color: #666666;">De
+											<s>{{products[c]['price']}}</s>
+										</span>
+										<!-- END PREÇO DE -->
+										<br>
+									{% endif %}
+									<!-- PREÇO POR -->
+									<span style="color: #BF5545;">Por
+										{{products[c]['priceBy']}}
+										<br></span>
+									<!-- END PREÇO POR -->
+								</td>
+							</tr>
+							<tr>
+								<!-- CTA -->
+								<td width="275" height="60" align="center">
+									<table cellpadding="0" cellspacing="0" align="center">
+										<tr>
+											<td align="center" style="padding: 10px; width: 150px; height: 30px; border: 0px;padding: 5px; background-color: #000;border-radius: 5px; font-family: Arial Nova, Arial, Helvetica, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter;">
+												<a target="_blank" href="{{products[c]['productLink']}}" style="text-decoration: none;color: #ffffff;">
+													COMPRAR
+												</a>
+											</td>
+										</tr>
+									</table>
+								</td>
+								<!-- END CTA -->
+							</tr>
+						</table>
+					</td>
+					<td align="center">
+						<table width="290" cellpadding="0" cellspacing="0" align="center" bgcolor="#F7F7F7" height="475" style="border-radius: 20px; padding: 3px;">
+							<tr>
+								<!-- IMG -->
+								<td width="275" align="center" valign="top">
+									<a href="{{products[(c + 1)]['productLink']}}" style="text-decoration: none; color:#000000;" target="_blank">
+										<img border="0" src="{{products[(c + 1)]['image']}}" width="260" alt="" style="display: block; border-radius: 25px;">
+									</a>
+								</td>
+								<!-- END IMG -->
+							</tr>
+							<tr>
+								<td height="15"></td>
+							</tr>
+							<tr>
+								<!-- NOME PRODUTO -->
+								<td width="275" align="center" valign="top">
+									<b>{{products[(c + 1)]['productName']}}</b>
+								</td>
+								<!-- END NOME PRODUTO -->
+							</tr>
+							<tr>
+								<td height="15"></td>
+							</tr>
+							<tr>
+								<td width="275" align="center">
+									{% if products[(c + 1)]['priceByNum'] < products[(c + 1)]['priceNum'] %}
+										<!-- PREÇO DE -->
+										<span style="color: #666666;">De
+											<s>{{products[(c +
+								1)]['price']}}</s>
+										</span>
+										<!-- END PREÇO DE -->
+										<br>
+									{% endif %}
+									<!-- PREÇO POR -->
+									<span style="color: #BF5545;">Por
+										{{products[(c + 1)]['priceBy']}}
+										<br></span>
+									<!-- END PREÇO POR -->
+								</td>
+							</tr>
+							<tr>
+								<td width="275" height="60" align="center">
+									<table cellpadding="0" cellspacing="0" align="center">
+										<tr>
+											<!-- CTA -->
+											<td align="center" style="padding: 10px; width: 150px; height: 30px; border: 0px;padding: 5px; background-color: #000;border-radius: 5px; font-family: Arial Nova, Arial, Helvetica, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter;">
+												<a target="_blank" href="{{products[(c + 1)]['productLink']}}" style="text-decoration: none;color: #ffffff;">
+													COMPRAR
+												</a>
+											</td>
+											<!-- END CTA -->
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			{% set c=c + 2 %}
+		{% endfor %}
+	{% else %}
+		{% if totalProducts > 1 %}
+			{% for i in 1..(totalProducts - 1) %}
+				<table>
+					<tr>
+						<td height="20"></td>
+					</tr>
+				</table>
+				<!-- 1/LINHA -->
+				<table cellpadding="0" cellspacing="0" width="600" border="0" align="center" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif;color: #000000; font-size: 14px;">
+					<tr>
+						<td align="center">
+							<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="#F7F7F7" style="border-radius: 25px; padding: 10px;">
+								<tr>
+									<td align="left">
+										<table width="600" border="0" cellpadding="0" cellspacing="0" align="center">
+											<tr>
+												<!-- IMG -->
+												<td align="left" width="200">
+													<a href="{{products[i]['productLink']}}" style="text-decoration: none; color:#000000;" target="_blank">
+														<img border="0" src="{{products[i]['image']}}" width="200" alt="" style="border-radius: 25px;">
+													</a>
+												</td>
+												<!-- END IMG -->
+												<td align="left" width="300" style="padding-left: 50px;">
+													<table align="left">
+														<tr>
+															<!-- NOME PRODUTO -->
+															<td align="left">
+																<a href="{{products[i]['productLink']}}" style="text-decoration: none; color:#000000;" target="_blank">
+																	<b>{{products[i]['productName']}}</b>
+																</a>
+															</td>
+															<!-- END NOME PRODUTO -->
+														</tr>
+														<tr>
+															<td height="15"></td>
+														</tr>
+														{% if products[i]['priceByNum'] < products[i]['priceNum'] %}
+															<tr>
+																<!-- PREÇO DE -->
+																<td align="left">
+																	<span style="color: #666666;">De
+																		<s>{{products[i]['price']}}</s>
+																	</span>
+
+																</td>
+																<!--  END PREÇO DE -->
+															</tr>
+														{% endif %}
+														<tr>
+															<!-- PREÇO POR -->
+															<td align="left">
+																<span style="color: #BF5545; font-family: Arial, Helvetica, Arial, Helvetica, sans-serif;">Por
+																	{{products[i]['priceBy']}}</span>
+															</td>
+															<!-- END PREÇO POR -->
+														</tr>
+														<tr>
+															<td height="15"></td>
+														</tr>
+														<tr>
+															<td align="left">
+																<table cellpadding="0" cellspacing="0" align="left">
+																	<tr>
+																		<!-- CTA -->
+																		<td align="left" style="padding: 10px; width: 140px; height: 30px; border: 0px;padding: 5px; background-color: #000;border-radius: 5px; font-family: Arial Nova, Arial, Helvetica, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter;">
+																			<a target="_blank" href="{{products[i]['productLink']}}" style="text-decoration: none;color: #ffffff;">
+																				COMPRAR
+																			</a>
+																		</td>
+																		<!-- END CTA -->
+																	</tr>
+																</table>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td height="15"></td>
+					</tr>
+				</table>
+			{% endfor %}
+		{% endif %}
+	{% endif %}
+	{% if totalRecommendations > 0 %}
+		<!-- RECOMENDATIONS -->
+		<table cellpadding="0" cellspacing="0" width="600" border="0" align="center" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif;color: #000000; font-size: 14px;">
+			<tr>
+				<td height="15"></td>
+			</tr>
+			<tr>
+				<td align="center">
+					<table width="596" cellpadding="0" cellspacing="0" align="center">
+						<tr>
+							<td align="center">
+								<table cellspacing="0" cellpadding="0" border="0" width="600">
+									<tr>
+										<td align="center" height="40" bgcolor="#000000" style="font-family: Arial, Helvetica, sans-serif; color: #ffffff;">
+											RECOMENDADOS PARA VOCÊ
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td height="15"></td>
+			</tr>
+		</table>
+		{% set c=0 %}
+
+		{% set totalLines = (totalRecommendations / 3) | round(0, 'floor') %}
+		{% for l in range(1, totalLines) %}
+			<table>
+				<tr>
+					<td height="20"></td>
+				</tr>
+			</table>
+			<!-- 3/LINHA -->
+			<table cellpadding="0" cellspacing="0" width="600" align="center">
+				<tr>
+					<td align="center">
+						<table width="190" border="0" cellpadding="0" cellspacing="0" align="center" height="420" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif;color: #000000; font-size: 15px; border-radius: 20px; padding: 2px;" bgcolor="#F7F7F7">
+							<tr>
+								<!-- IMG -->
+								<td width="180" align="center" valign="top">
+									<a href="{{recommendations[c]['productLink']}}" style="text-decoration: none; color:#000000;" target="_blank">
+										<img border="0" src="{{recommendations[c]['image']}}" width="170" alt="" style="display: block; border-radius: 25px;">
+									</a>
+								</td>
+								<!-- END IMG -->
+							</tr>
+							<tr>
+								<td height="15"></td>
+							</tr>
+							<tr>
+								<!-- NOME PRODUTO -->
+								<td width="170" align="center" valign="top">
+									<b>{{recommendations[c]['productName']}}</b>
+								</td>
+								<!-- END NOME PRODUTO -->
+							</tr>
+							<tr>
+								<td height="15"></td>
+							</tr>
+							<tr>
+								<td width="170" align="center">
+									{% if recommendations[c]['priceByNum'] < recommendations[c]['priceNum'] %}
+										<!-- PREÇO DE -->
+										<span style="color: #666666;">De
+											<s>{{recommendations[c]['price']}}</s>
+										</span>
+										<!-- END PREÇO DE -->
+										<br>
+									{% endif %}
+									<!-- PREÇO POR -->
+									<span style="color: #BF5545;">Por
+										{{recommendations[c]['priceBy']}}
+										<br></span>
+									<!-- END PREÇO POR -->
+								</td>
+							</tr>
+							<tr>
+								<td width="180" height="60" align="center">
+									<table cellpadding="0" cellspacing="0" align="center">
+										<tr>
+											<!-- CTA -->
+											<td align="center" style="padding: 10px; width: 120px; height: 30px; border: 0px;padding: 5px; background-color: #000;border-radius: 5px; font-family: Arial Nova, Arial, Helvetica, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter;">
+												<a target="_blank" href="{{recommendations[c]['productLink']}}" style="text-decoration: none;color: #ffffff;">
+													COMPRAR
+												</a>
+											</td>
+											<!-- END CTA -->
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+
+					</td>
+					<td align="center">
+						<table width="190" border="0" cellpadding="0" cellspacing="0" align="center" height="420" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif;color: #000000; font-size: 15px; border-radius: 20px; padding: 2px;" bgcolor="#F7F7F7">
+							<tr>
+								<!-- IMG -->
+								<td width="180" align="center" valign="top">
+									<a href="{{recommendations[(c + 1)]['productLink']}}" style="text-decoration: none; color:#000000;" target="_blank">
+										<img border="0" src="{{recommendations[(c + 1)]['image']}}" width="170" alt="" style="display: block; border-radius: 25px;">
+									</a>
+								</td>
+								<!-- END IMG -->
+							</tr>
+							<tr>
+								<td height="15"></td>
+							</tr>
+							<tr>
+								<!-- NOME PRODUTO -->
+								<td width="170" align="center" valign="top">
+									<b>{{recommendations[(c + 1)]['productName']}}</b>
+								</td>
+								<!-- END NOME PRODUTO -->
+							</tr>
+							<tr>
+								<td height="15"></td>
+							</tr>
+							<tr>
+								<td width="170" align="center">
+									{% if recommendations[(c + 1)]['priceByNum'] < recommendations[(c + 1)]['priceNum'] %}
+										<!-- PREÇO DE -->
+										<span style="color: #666666;">
+											De
+											<s>{{recommendations[(c + 1)]['price']}}</s>
+										</span>
+										<!-- END PREÇO DE -->
+										<br>
+									{% endif %}
+									<!-- PREÇO POR -->
+									<span style="color: #BF5545;">Por
+										{{recommendations[(c + 1)]['priceBy']}}
+										<br></span>
+									<!-- END PREÇO POR -->
+								</td>
+							</tr>
+							<tr>
+								<td width="180" height="60" align="center">
+									<table cellpadding="0" cellspacing="0" align="center">
+										<tr>
+											<!-- CTA -->
+											<td align="center" style="padding: 10px; width: 120px; height: 30px; border: 0px;padding: 5px; background-color: #000;border-radius: 5px; font-family: Arial Nova, Arial, Helvetica, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter;">
+												<a target="_blank" href="{{recommendations[(c + 1)]['productLink']}}" style="text-decoration: none;color: #ffffff;">
+													COMPRAR
+												</a>
+											</td>
+											<!-- END CTA -->
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td align="center">
+						<table width="190" border="0" cellpadding="0" cellspacing="0" align="center" height="420" style="text-decoration: none; font-family: Arial, Helvetica, sans-serif;color: #000000; font-size: 14px; border-radius: 20px; padding: 2px;" bgcolor="#F7F7F7">
+							<tr>
+								<!-- IMG -->
+								<td width="180" align="center" valign="top">
+									<a href="{{recommendations[(c + 2)]['productLink']}}" style="text-decoration: none; color:#000000;" target="_blank">
+										<img border="0" src="{{recommendations[(c + 2)]['image']}}" width="170" alt="" style="display: block; border-radius: 25px;">
+									</a>
+								</td>
+								<!-- END IMG -->
+							</tr>
+							<tr>
+								<td height="15"></td>
+							</tr>
+							<tr>
+								<!-- NOME PRODUTO -->
+								<td width="170" align="center" valign="top">
+									<b>{{recommendations[(c + 2)]['productName']}}</b>
+								</td>
+								<!-- END NOME PRODUTO -->
+							</tr>
+							<tr>
+								<td height="15"></td>
+							</tr>
+							<tr>
+								<td width="170" align="center">
+									{% if recommendations[(c + 2)]['priceByNum'] < recommendations[(c + 2)]['priceNum'] %}
+										<!-- PREÇO DE -->
+										<span style="color: #666666;">
+											De
+											<s>{{recommendations[(c + 2)]['price']}}</s>
+										</span>
+										<!-- END PREÇO DE -->
+										<br>
+									{% endif %}
+									<!-- PREÇO POR -->
+									<span style="color: #BF5545;">Por
+										{{recommendations[(c + 2)]['priceBy']}}
+										<br></span>
+									<!-- END PREÇO POR -->
+								</td>
+							</tr>
+							<tr>
+								<td width="180" height="60" align="center">
+									<table cellpadding="0" cellspacing="0" align="center">
+										<tr>
+											<!-- CTA -->
+											<td align="center" style="padding: 10px; width: 120px; height: 30px; border: 0px;padding: 5px; background-color: #000;border-radius: 5px; font-family: Arial Nova, Arial, Helvetica, sans-serif; font-size: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: lighter;">
+												<a target="_blank" href="{{recommendations[(c + 2)]['productLink']}}" style="text-decoration: none;color: #ffffff;">
+													COMPRAR
+												</a>
+											</td>
+											<!-- END CTA -->
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			{% set c = c + 3 %}
+		{% endfor %}
+	{% endif %}
+	<!-- END RECOMMENDATIONS -->
+{% endif %}

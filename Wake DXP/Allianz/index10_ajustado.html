@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Consul</title>
+    <style type="text/css">
+        /* CLIENT-SPECIFIC STYLES */
+        body,
+        table,
+        td,
+        a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        /* RESET STYLES */
+        img {
+            border: 0;
+            outline: none;
+            text-decoration: none;
+        }
+
+        table {
+            border-collapse: collapse !important;
+        }
+
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+
+        /* iOS BLUE LINKS */
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* ANDROID CENTER FIX */
+        div[style*="margin: 16px 0;"] {
+            margin: 0 !important;
+        }
+
+        /* MEDIA QUERIES */
+        @media all and (max-width:639px) {
+            .wrapper {
+                width: 320px !important;
+                padding: 0 !important;
+            }
+
+            .container {
+                width: 300px !important;
+                padding: 0 !important;
+            }
+
+            .mobile {
+                width: 300px !important;
+                display: block !important;
+                padding: 0 !important;
+            }
+
+            .img {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            .txt-mobile {
+                font-size: 14px !important;
+            }
+
+            *[class="mobileOff"] {
+                width: 0px !important;
+                display: none !important;
+            }
+
+            *[class*="mobileOn"] {
+                display: block !important;
+                max-height: none !important;
+            }
+        }
+
+        @media only screen and (max-width:600px) {
+            .tabela {
+                zoom: 100% !important;
+                white-space: nowrap !important;
+            }
+
+            div>u~div .tabela {
+                zoom: 65% !important;
+                white-space: nowrap !important;
+            }
+
+            .textfooter {
+                font-size: 7px !important;
+                letter-spacing: -1.3px;
+            }
+
+            div>u~div .textfooter {
+                font-size: 11px !important;
+            }
+
+            .textfooter2 {
+                font-size: 10px !important;
+                letter-spacing: -0.3px;
+            }
+
+            div>u~div .textfooter2 {
+                font-size: 11px !important;
+            }
+        }
+
+        .gmailfix {
+            display: none;
+            display: none !important;
+        }
+    </style>
+
+
+</head>
+
+<body style="margin:0; padding:0; background-color:#ffffff;">
+    <center>
+        <table width="600" border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+
+            <table width="550" cellpadding="0" cellspacing="0" border="0" align="center"
+                style="background-color:#ffffff;padding-bottom: 10px;">
+                <tr>
+                    <td align="left">
+                        <span style="font-family: sans-serif; color:#767676;font-size:9pt">Participe da pesquisa, é rapidinho.</span>
+                        <div style="display: none; max-height: 0px; overflow: hidden;">
+                            ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+                            ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+                            ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+                            ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+                            ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+                            ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+                            ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+                            ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+                        </div>
+                    </td>
+                    <td align="right">
+                        <a href="##preview##" style="font-family: sans-serif; color:#767676;font-size:9pt">Ver na
+                            web</a> | <a href="##optout##"
+                            style="font-family: sans-serif; color:#767676;font-size:9pt">Cancelar inscrição</a>
+                    </td>
+                </tr>
+            </table>
+
+            <table width="600" align="center" border="0" cellpadding="0" cellspacing="0" class="width-1">
+                <tr>
+                    <td>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <img style="line-height: 1px; display: block;"
+                                        src="https://assets.catskillet.com/allianz/2023/230510A/10/20230516_01.jpg">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <img style="line-height: 1px; display: block;"
+                                        src="https://assets.catskillet.com/allianz/2023/230510A/10/20230516_02.jpg">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img style="line-height: 1px; display: block;"
+                                        src="https://assets.catskillet.com/allianz/2023/230510A/10/20230516_03.jpg">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 42px;">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td width="31">
+                                                &nbsp;
+                                            </td>
+                                            <td>
+                                                <table border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td width="569" align="left"
+                                                            style="color: #003781; font-size: 44px; font-weight: 300; font-family: Arial, Helvetica, sans-serif; letter-spacing: -0.3px; line-height: 1.3;">
+                                                            App Allianz Cliente Auto:
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td width="98">
+                                                &nbsp;
+                                            </td>
+                                            <td>
+                                                <table border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td width="502" align="left"
+                                                            style="color: #f42559; font-size: 44px; font-weight: 300; font-family: Arial, Helvetica, sans-serif; letter-spacing: -0.3px; line-height: 1.1;">
+                                                            Tudo o que você precisa,<br> direto no seu celular!
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="height: 52px;">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td width="31">
+                                                &nbsp;
+                                            </td>
+                                            <td>
+                                                <table border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td width="569" align="left"
+                                                            style="color: #04397e; font-size: 29px; font-weight: 600; font-family: Arial, Helvetica, sans-serif; letter-spacing: -0.8px; line-height: 1.2;">
+                                                            Tenha o seu seguro sempre na palma da<br>mão com o app
+                                                            Allianz Cliente Auto.
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td style="height: 24px;">
+                                                &nbsp;
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="https://allianzauto.onelink.me/mJcl/00cxyrjb" target="_blank">
+                                                    <img style="line-height: 1px; display: block;"
+                                                        src="https://assets.catskillet.com/allianz/2023/230510A/10/20230516_06.jpg">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="height: 45px;">
+                                                &nbsp;
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="45">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td width="31">
+                                                &nbsp;
+                                            </td>
+                                            <td>
+                                                <table border="0" cellpadding="0" cellspacing="0">
+
+                                                    <tr>
+                                                        <td width="569" align="left"
+                                                            style="color: #05397f; font-size: 25px; font-weight: 300; font-family: Arial, Helvetica, sans-serif; letter-spacing: -0.5px; line-height: 1.1;">
+                                                            Com apenas alguns cliques, você acessa os<br>
+                                                            dados da sua apólice, informações sobre<br>
+                                                            pagamento, 2ª via de boleto, seus benefícios do<br>
+                                                            Clube de Descontos Allianz, contato do seu corretor Allianz
+                                                            e muito mais!
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 30px;">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="164381" height="202">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td width="31">
+                                                &nbsp;
+                                            </td>
+                                            <td>
+                                                <table border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td>
+                                                            <img style="line-height: 1px; display: block;"
+                                                                src="https://assets.catskillet.com/allianz/2023/230510A/10/20230516_10.jpg">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td>
+                                                <table border="0" cellpadding="0" cellspacing="0">
+
+                                                    <tr>
+                                                        <td width="29">
+                                                            &nbsp;
+                                                        </td>
+                                                        <td width="571" align="left"
+                                                            style="color: #ffffff; font-size: 32px; font-weight: 300; font-family: Arial, Helvetica, sans-serif; letter-spacing: -0.5px; line-height: 1.2; height: 58px;">
+                                                            Precisou do guincho?
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="29">
+                                                            &nbsp;
+                                                        </td>
+                                                        <td width="571" align="left"
+                                                            style="color: #ffffff; font-size: 26px; font-weight: 300; font-family: Arial, Helvetica, sans-serif; letter-spacing: -0.5px; line-height: 1.2;">
+                                                            Pelo app você tem acesso fácil para <b>acionar e acompanhar
+                                                                o guincho.</b>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 30px;">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td align="center">
+                                                <table border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td style="line-height: 20px;">
+                                                            &nbsp;
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="600" align="center"
+                                                            style="color: #05397f; font-size: 26px; font-weight: 300; font-family: Arial, Helvetica, sans-serif; letter-spacing: -0.5px; line-height: 1.2;">
+                                                            Viu como é fácil?
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="line-height: 30px;">
+                                                            &nbsp;
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="600" align="center"
+                                                            style="color: #f42559; font-size: 30px; font-weight: 300; font-family: Arial, Helvetica, sans-serif; letter-spacing: -0.2px; line-height: 1.2;">
+                                                            Se você ainda não tem, aproveite<br>e baixe agora.
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="line-height: 30px;">
+                                                            &nbsp;
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                    <tr>
+                                                        <td>
+                                                            <table border="0" cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td width="150">
+                                                                        &nbsp;
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="https://allianzauto.onelink.me/mJcl/00cxyrjb"
+                                                                            target="_blank">
+                                                                            <img style="line-height: 1px; display: block;"
+                                                                                src="https://assets.catskillet.com/allianz/2023/230510A/10/20230516_14.jpg">
+                                                                        </a>
+                                                                    </td>
+                                                                    <td width="12">
+                                                                        &nbsp;
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="https://allianzauto.onelink.me/mJcl/00cxyrjb"
+                                                                            target="_blank">
+                                                                            <img style="line-height: 1px; display: block;"
+                                                                                src="https://assets.catskillet.com/allianz/2023/230510A/10/20230516_17.jpg">
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 30px;">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+            </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="600" align="center"
+                                style="color: #013881; font-size: 30px; font-weight: 300; font-family: Arial, Helvetica, sans-serif; letter-spacing: -0.5px; line-height: 1.2;">
+                                Allianz. Você pronto para viver o melhor.
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="line-height: 10px;">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="600" align="center">
+                                <img style="line-height: 1px; display: block;"
+                                    src="https://assets.catskillet.com/allianz/2023/230510A/10/20230516_21.jpg">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 10px;">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td>
+                                <table border="0" cellpading="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <table border="0" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td width="36">
+                                                        &nbsp;
+                                                    </td>
+                                                    <td width="131" align="left" class="textfooter"
+                                                        style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #003781; letter-spacing: -0.9px; line-height: 1.2;">
+                                                        <b>Siga nossas redes sociais</b>
+                                                    </td>
+                                                    <td width="26" align="left" style="line-height: 1px;">
+                                                        <a href="https://www.instagram.com/allianzbrasil/"
+                                                            target="_blank">
+                                                            <img src="https://assets.catskillet.com/allianz/20221130-1/C/img12.png"
+                                                                alt="">
+                                                        </a>
+                                                    </td>
+                                                    <td width="6">
+                                                        &nbsp;
+                                                    </td>
+                                                    <td width="26" align="left" style="line-height: 1px;">
+                                                        <a href="https://www.facebook.com/allianzbrasil/"
+                                                            target="_blank">
+                                                            <img src="https://assets.catskillet.com/allianz/20221130-1/C/img14.png"
+                                                                alt="">
+                                                        </a>
+                                                    </td>
+                                                    <td width="7">
+                                                        &nbsp;
+                                                    </td>
+                                                    <td width="26" align="left" style="line-height: 1px;">
+                                                        <a href="https://www.linkedin.com/company/allianz-seguros-brasil/mycompany/verification/"
+                                                            target="_blank">
+                                                            <img src="https://assets.catskillet.com/allianz/20221130-1/C/img16.png"
+                                                                alt="">
+                                                        </a>
+                                                    </td>
+                                                    <td width="102">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table border="0" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td width="136" align="left" class="textfooter"
+                                                        style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #0079b3; letter-spacing: -0.9px; line-height: 1.2;">
+                                                        Precisou? É só chamar no chat.
+                                                    </td>
+                                                    <td width="26" align="right" style="line-height: 1px;">
+                                                        <a href="https://chatcc.allianz.com.br/%0D%0D" target="_blank">
+                                                            <img src="https://assets.catskillet.com/allianz/20221130-1/C/img20.png"
+                                                                alt="">
+                                                        </a>
+                                                    </td>
+                                                    <td width="44">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="no-height-mobile" style="height: 18px;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <table border="0" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td width="20">
+                                                        &nbsp;
+                                                    </td>
+                                                    <td width="580" align="left" class="textfooter"
+                                                        style="height: 10x; font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #003686;letter-spacing: -0.3px; line-height: 1.2;">
+                                                        O serviço CAR10 não caracteriza acionamento de seguro e portanto
+                                                        não há perda de bônus e também não está<br>
+                                                        vinculado a garantia de serviços da rede referenciada.<br>
+                                                        Allianz Seguros S.A., CNPJ: 61.573.796/0001-<a
+                                                            style="text-decoration: none; color: #003686;">66, Rua
+                                                            Eugênio de Medeiros nº 303, ands. 1-parte, 2 ao 9, 15 e
+                                                            16,<br>
+                                                            Pinheiros, São Paulo - CEP: 05425-000.</a> Linha Direta
+                                                        Allianz Seguros: 4090 1110 (Capitais e Regiões
+                                                        Metropolitanas),<br>
+                                                        0800 777 7243 (demais regiões). SAC (24 horas): 08000 115 215.
+                                                        Ouvidoria Allianz Seguros: 0800 771 3313.<br>
+                                                        Atendimento à pessoa com deficiência auditiva ou de fala: 08000
+                                                        121 239.<br>
+                                                        Processo SUSEP nº 15414.002216/2004-57. Consulte as Condições
+                                                        Gerais, assim como os planos de assistência 24h,<br>
+                                                        serviços e abrangência do seguro no site <a href="#"
+                                                            style="text-decoration: none; color: #003686;">www.allianz.com.br.</a>
+                                                        O registro do produto é automático e não representa<br>
+                                                        aprovação ou recomendação por parte da SUSEP. A aceitação do
+                                                        seguro está sujeita a análise do risco.<br>
+                                                        A Allianz Seguros respeita a sua privacidade e é contra o spam
+                                                        na rede. Para mais informações, acesse a Política de<br>
+                                                        Privacidade de Dados da Allianz, disponível em: <a href="#"
+                                                            style="text-decoration: none; color: #003686;">www.allianz.com.br/politica-de-privacidade.</a>
+                                                        Se você não deseja mais<br>
+                                                        receber nossos e-mails, <a href="#"
+                                                            style="text-decoration: none; color: #003686;">cancele sua
+                                                            inscrição aqui.</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <a href="##optout##"
+                                    style="font-family: sans-serif; color:#767676;font-size:9pt">Cancelar inscrição</a>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+        </table>
+        </table>
+</body>
+
+</html>
